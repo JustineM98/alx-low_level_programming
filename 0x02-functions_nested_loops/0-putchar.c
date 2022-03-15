@@ -1,27 +1,13 @@
-#include "stdio.h"
-#include "main.h"
+#include <stdio.h>
+#include <main.h>
+
 /**
- * main -Entry point
- *
- * Return: Always 0 (Success)
+ * main - print_putchar
+ * Return: 0 if existed properly
  */
-void print_putchar(void);
 
 int main(void)
 {
-	print_putchar(void);
-	return (0);
-}
+	putchar('_putchar');
+	return(0);
 
-void print_putchar(void)
-{
-	_putchar('_');
-	_putchar('p');
-	_putchar('u');
-	_putchar('t');
-	_putchar('c');
-	_putchar('h');
-	_putchar('a');
-	_putchar('r');
-	_putchar('\n');
-}
