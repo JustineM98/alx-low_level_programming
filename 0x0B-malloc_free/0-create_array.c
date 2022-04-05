@@ -1,19 +1,36 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <limits.h>
+#include <string.h>
 
 /**
- * *malloc_checked - allocate memory with malloc
- * @b: unsigned int type
- * Return: return pointer
+ * *array_range - make  memory for an array
+ * @min: int type
+ * @max: int type
+ * Return:  return pointer to array
  */
-void *malloc_checked(unsigned int b)
+
+int *array_range(int min, int max)
 {
 	int *ptr;
+	int arr;
 
-	ptr = malloc(b);
+	if (min > max)
+	{
+		return (NULL);
+	}
+
+	ptr = malloc(sizeof(int) * (max - min + 1));
 	if (ptr == NULL)
-		exit(98);
+	{
+		return (NULL);
+	}
+	arr = 0;
+	while (min <= max)
+	{
+		ptr[arr] = min;
+		min++;
+		arr++;
+	}
 	return (ptr);
 }
