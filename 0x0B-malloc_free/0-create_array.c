@@ -1,36 +1,36 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+
 
 /**
- * *array_range - make  memory for an array
- * @min: int type
- * @max: int type
- * Return:  return pointer to array
+ * create_array - create an arry of size with char c
+ * @size: unsigned int type
+ * @c: char type
+ * Return: Return pointer to array created
  */
 
-int *array_range(int min, int max)
+char *create_array(unsigned int size, char c)
 {
-	int *ptr;
-	int arr;
+	char *s;
+	unsigned int i;
 
-	if (min > max)
+	if (size == 0)
 	{
 		return (NULL);
 	}
 
-	ptr = malloc(sizeof(int) * (max - min + 1));
-	if (ptr == NULL)
+	s = malloc((size) * sizeof(char));
+	if (s == NULL)
 	{
 		return (NULL);
 	}
-	arr = 0;
-	while (min <= max)
+	i = 0;
+	while (i < size)
 	{
-		ptr[arr] = min;
-		min++;
-		arr++;
+		s[i] = c;
+		i++;
 	}
-	return (ptr);
+	s[i] = '\0';
+	return (s);
 }
