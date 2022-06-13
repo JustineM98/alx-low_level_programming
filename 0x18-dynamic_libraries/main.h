@@ -1,3 +1,4 @@
+#!/bin/bash
 #ifndef DYNLIB
 #define DYNLIB
 
