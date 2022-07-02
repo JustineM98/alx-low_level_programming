@@ -1,3 +1,3 @@
 #!/bin/bash
-cp ../sh2.sh.
-. ./sh2.sh
+export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
+sudo LD_PRELOAD=$LD_LIBRARY_PATH ./gm
